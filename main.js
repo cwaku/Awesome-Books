@@ -20,10 +20,6 @@ function showBooks() {
   const booksCode = bookss.map((book) => singleBook(book));
   bookList.innerHTML = booksCode.join('');
 
-  removeBook();
-}
-
-function removeBook() {
   const btn = document.querySelectorAll('.remove');
 
   btn.forEach((el) => {
