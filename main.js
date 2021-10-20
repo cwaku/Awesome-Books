@@ -40,13 +40,14 @@ class BookClass {
 const storedBooks = JSON.parse(localStorage.getItem('bookss'));
 
 function showBooks() {
-  const booksCode = bookss.map((book) => new BookClass(book.title, book.author, book.id).bookCode());
+  const booksCode =
+  bookss.map((book) => new BookClass(book.title, book.author, book.id).bookCode());
   bookList.innerHTML = booksCode.join('');
 
   const btn = document.querySelectorAll('.remove');
 
   btn.forEach((el) => {
-    el.addEventListener("click", (e) => {
+    el.addEventListener('click', (e) => {
       const id = e.target.getAttribute('data-id');
       BookClass.remove(id);
       showBooks();
