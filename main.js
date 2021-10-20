@@ -41,7 +41,7 @@ const storedBooks = JSON.parse(localStorage.getItem('bookss'));
 
 function showBooks() {
   const booksCode = bookss.map((book) => new BookClass(book.title, book.author, book.id)
-  .bookCode());
+    .bookCode());
   bookList.innerHTML = booksCode.join('');
 
   const btn = document.querySelectorAll('.remove');
