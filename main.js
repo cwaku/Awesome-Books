@@ -1,11 +1,11 @@
-const bookList = document.querySelector(".books");
-const form = document.getElementById("newBook");
-const titleInput = document.getElementById("title");
-const authorInput = document.getElementById("author");
+const bookList = document.querySelector('.books');
+const form = document.getElementById('newBook');
+const titleInput = document.getElementById('title');
+const authorInput = document.getElementById('author');
 
 let bookss = [];
 
-class bookClass {
+class BookClass {
   constructor(title, author, id) {
     this.title = title;
     this.author = author;
@@ -28,29 +28,27 @@ class bookClass {
     }
     book.id = id;
     bookss.push(book);
-    localStorage.setItem("bookss", JSON.stringify(bookss));
+    localStorage.setItem('bookss', JSON.stringify(bookss));
   }
 
   static remove(id) {
     bookss = bookss.filter((b) => b.id !== Number(id));
-    localStorage.setItem("bookss", JSON.stringify(bookss));
+    localStorage.setItem('bookss', JSON.stringify(bookss));
   }
 }
 
-const storedBooks = JSON.parse(localStorage.getItem("bookss"));
+const storedBooks = JSON.parse(localStorage.getItem('bookss'));
 
 function showBooks() {
-  const booksCode = bookss.map((book) =>
-    new bookClass(book.title, book.author, book.id).bookCode()
-  );
-  bookList.innerHTML = booksCode.join("");
+  const booksCode = bookss.map((book) => new BookClass(book.title, book.author, book.id).bookCode());
+  bookList.innerHTML = booksCode.join('');
 
-  const btn = document.querySelectorAll(".remove");
+  const btn = document.querySelectorAll('.remove');
 
   btn.forEach((el) => {
     el.addEventListener("click", (e) => {
-      const id = e.target.getAttribute("data-id");
-      bookClass.remove(id);
+      const id = e.target.getAttribute('data-id');
+      BookClass.remove(id);
       showBooks();
     });
   });
@@ -61,7 +59,7 @@ if (storedBooks) {
   showBooks();
 }
 
-form.addEventListener("submit", (e) => {
+form.addEventListener('submit', (e) => {
   e.preventDefault();
   const title = titleInput.value.trim();
   const author = authorInput.value.trim();
@@ -70,9 +68,9 @@ form.addEventListener("submit", (e) => {
     return;
   }
 
-  const newBook = new bookClass(title, author);
-  bookClass.addBook(newBook);
+  const newBook = new BookClass(title, author);
+  BookClass.addBook(newBook);
   showBooks();
-  titleInput.value = "";
-  authorInput.value = "";
+  titleInput.value = '';
+  authorInput.value = '';
 });
