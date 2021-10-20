@@ -38,7 +38,40 @@ class bookClass {
   }
 }
 
+const storedBooks = JSON.parse(localStorage.getItem('bookss'));
 
+function showBooks() {
+  const booksCode = bookss.map((book) => new bookClass(book.title, book.author, book.id).bookCode());
+  bookList.innerHTML = booksCode.join('');
 
+  const btn = document.querySelectorAll('.remove');
 
+  btn.forEach((el) => {
+    el.addEventListener('click', (e) => {
+      const id = e.target.getAttribute('data-id');
+      bookClass.remove(id);
+      showBooks();
+    });
+  });
+}
 
+if (storedBooks) {
+  bookss = storedBooks;
+  showBooks();
+}
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const title = titleInput.value.trim();
+  const author = authorInput.value.trim();
+
+  if (!title || !author) {
+    return;
+  }
+  
+  const newBook = new bookClass(title, author);
+  bookClass.addBook(newBook);
+  showBooks();
+  titleInput.value = '';
+  authorInput.value = '';
+});
