@@ -4,7 +4,6 @@
   box-sizing: border-box;
 }
 
-
 body {
   display: flex;
   flex-direction: column;
@@ -27,7 +26,6 @@ body {
   margin: 20px 0;
   padding: 0 20px;
   border: 2px solid #000;
-
 }
 
 .container ul li {

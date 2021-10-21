@@ -52,7 +52,6 @@ function showBooks() {
       const id = e.target.getAttribute('data-id');
       BookClass.remove(id);
       showBooks();
-      
     });
   });
 }
