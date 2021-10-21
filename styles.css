@@ -3,13 +3,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-/* 
-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-} */
 
 nav {
   display: flex;
@@ -45,7 +38,7 @@ nav ul {
 }
 
 .nav-item:focus {
-  color:rgb(48, 48, 241);
+  color: rgb(48, 48, 241);
 }
 
 .container {
