@@ -80,6 +80,10 @@ nav ul {
   margin: 5px auto;
 }
 
+.new-book {
+  display: none;
+}
+
 .books {
   list-style: none;
 }
@@ -118,7 +122,7 @@ input {
   text-align: center;
   margin: 45px 0;
   gap: 20px;
-  display: flex;
+  display: none; /* display flex */
   flex-direction: column;
 }
 
@@ -128,4 +132,7 @@ footer {
   text-align: center;
   margin: 5px 15px;
   padding: 5px 10px;
+  bottom: 0;
+  position: fixed;
+  width: 97.7%;
 }

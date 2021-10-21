@@ -2,6 +2,30 @@ const bookList = document.querySelector('.books');
 const form = document.getElementById('newBook');
 const titleInput = document.getElementById('title');
 const authorInput = document.getElementById('author');
+const list = document.querySelector('.container');
+const addNewBook = document.querySelector('.new-book');
+const contact = document.querySelector('.contact');
+
+
+list.addEventListener('click', () => {
+  addNewBook.style.display = 'none';
+  contact.style.display = 'none';
+  list.style.display = 'block';
+});
+
+addNewBook.addEventListener('click', () => {
+  list.style.display = 'none';
+  contact.style.display = 'none';
+  addNewBook.style.display = 'block';
+});
+
+contact.addEventListener('click', () => {
+  addNewBook.style.display = 'none';
+  list.style.display = 'none';
+  contact.style.display ='flex';
+});
+
+
 
 let bookss = [];
 
