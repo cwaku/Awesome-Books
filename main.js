@@ -24,7 +24,7 @@ navItem2.addEventListener('click', () => {
 navItem3.addEventListener('click', () => {
   addNewBook.style.display = 'none';
   list.style.display = 'none';
-  contact.style.display ='flex';
+  contact.style.display = 'flex';
 });
 
 let bookss = [];
@@ -114,4 +114,3 @@ document.addEventListener('DOMContentLoaded', () => {
     displayTime();
   }, 1000);
 });
-
