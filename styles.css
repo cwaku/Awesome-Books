@@ -84,6 +84,10 @@ nav ul {
   margin: 5px auto;
 }
 
+.new-book {
+  display: none;
+}
+
 .books {
   list-style: none;
 }
@@ -122,7 +126,7 @@ input {
   text-align: center;
   margin: 45px 0;
   gap: 20px;
-  display: flex;
+  display: none;
   flex-direction: column;
 }
 

@@ -3,28 +3,29 @@ const form = document.getElementById('newBook');
 const titleInput = document.getElementById('title');
 const authorInput = document.getElementById('author');
 const list = document.querySelector('.container');
-const addNewBook = document.querySelector('.section-2');
-const contact = document.querySelector('.section-3');
+const addNewBook = document.querySelector('.new-book');
+const contact = document.querySelector('.contact');
+const navItem1 = document.querySelector('.nav-item-1');
+const navItem2 = document.querySelector('.nav-item-2');
+const navItem3 = document.querySelector('.nav-item-3');
 
+navItem1.addEventListener('click', () => {
+  addNewBook.style.display = 'none';
+  contact.style.display = 'none';
+  list.style.display = 'block';
+});
 
-// navItems.addEventListener('click', () => {
-//   addNewBook.style.display = 'none';
-//   contact.style.display = 'none';
-//   list.style.display = 'block';
-// });
+navItem2.addEventListener('click', () => {
+  list.style.display = 'none';
+  contact.style.display = 'none';
+  addNewBook.style.display = 'block';
+});
 
-// navItems.addEventListener('click', () => {
-//   list.style.display = 'none';
-//   contact.style.display = 'none';
-//   addNewBook.style.display = 'block';
-// });
-
-// contact.addEventListener('click', () => {
-//   addNewBook.style.display = 'none';
-//   list.style.display = 'none';
-//   contact.style.display ='flex';
-// });
-
+navItem3.addEventListener('click', () => {
+  addNewBook.style.display = 'none';
+  list.style.display = 'none';
+  contact.style.display ='flex';
+});
 
 let bookss = [];
 
