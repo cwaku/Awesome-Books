@@ -13,9 +13,11 @@ class BookClass {
   }
 
   bookCode() {
-    return `<li>
-    <p>${this.title}</p>
+    return `<li><div class="list-items">
+    <p>"${this.title}"</p>
+    <p>by</p>
     <p>${this.author}</p>
+    </div>
     <button type="button" data-id='${this.id}' class="remove">remove</button>
   </li>`;
   }
@@ -50,6 +52,7 @@ function showBooks() {
       const id = e.target.getAttribute('data-id');
       BookClass.remove(id);
       showBooks();
+      
     });
   });
 }
