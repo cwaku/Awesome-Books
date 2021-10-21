@@ -100,3 +100,18 @@ form.addEventListener('submit', (e) => {
   titleInput.value = '';
   authorInput.value = '';
 });
+
+const displayTime = () => {
+  const currentDate = luxon.DateTime.fromJSDate(new Date());
+  const date = currentDate.toLocaleString(luxon.DateTime.DATETIME_MED_WITH_SECONDS);
+  document.querySelector('.time').innerHTML = date;
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  luxon.Settings.defaultLocale = 'en';
+  displayTime();
+  setInterval(() => {
+    displayTime();
+  }, 1000);
+});
+
