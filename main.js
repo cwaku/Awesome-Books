@@ -101,6 +101,8 @@ form.addEventListener('submit', (e) => {
   authorInput.value = '';
 });
 
+/* global luxon, luxon */
+
 const displayTime = () => {
   const currentDate = luxon.DateTime.fromJSDate(new Date());
   const date = currentDate.toLocaleString(luxon.DateTime.DATETIME_MED_WITH_SECONDS);
