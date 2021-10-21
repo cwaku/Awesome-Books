@@ -17,7 +17,6 @@ class BookClass {
     <p>${this.title}</p>
     <p>${this.author}</p>
     <button type="button" data-id='${this.id}' class="remove">remove</button>
-    <hr>
   </li>`;
   }
 
